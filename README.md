@@ -14,20 +14,26 @@ This is a lightweight Postman-style tool built with **React** and **Vite**. It a
 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
-- JavaScript / TypeScript (optional)
-- LocalStorage for persistence
+- JavaScript
+- `localStorage` for persistence
 
-## 🎯 Why I Built This
+## ⚠️ CORS & Proxy Info
 
-I wanted a simple, in-browser tool to quickly test and store request templates without any server setup. This also served as a fun exercise to deepen my understanding of local storage and state management in React.
+Since this app is entirely frontend-based, **you may encounter CORS (Cross-Origin Resource Sharing) errors** when making real API requests to external servers.
 
-## 🛠️ Getting Started
+To help with local development, you can set up a proxy in the Vite config (`vite.config.js`) like this:
 
-Clone the repo and start the development server:
-
-```bash
-git clone https://github.com/your-username/mini-postman-clone.git
-cd mini-postman-clone
-npm install
-npm run dev
+```js
+// vite.config.js
+export default defineConfig({
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://your-api-domain.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
+});
 ```
