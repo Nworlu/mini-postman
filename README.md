@@ -14,7 +14,7 @@ This is a lightweight Postman-style tool built with **React** and **Vite**. It a
 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
-- JavaScript
+- Typescript
 - `localStorage` for persistence
 
 ## ⚠️ CORS & Proxy Info
