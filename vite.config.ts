@@ -10,7 +10,7 @@ export default defineConfig({
     host: true,
     proxy: {
       "/api": {
-        target: "https://api.axstron.com",
+        target: "",
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/api/, "/api"),
